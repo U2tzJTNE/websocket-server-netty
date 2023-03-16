@@ -1,4 +1,4 @@
-package main.java.com.krt.netty.websocket;
+package com.u2tzjtne.websocket;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -14,9 +14,9 @@ import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.codec.http.websocketx.extensions.compression.WebSocketServerCompressionHandler;
 
 /**
- * @Author gmd
+ * @Author u2tzjtne@gmail.com
  * @Description Netty WebSocket长连接初始化类
- * @Date 2020年1月16日21:39:41
+ * @Date 2023年3月7日10:17:41
  */
 public class MyServer {
     public static void main(String[] args) throws InterruptedException {
@@ -43,14 +43,13 @@ public class MyServer {
                               浏览器发送webSocket请求时，使用ws协议，如 ws://localhost:1234/hello。
                               WebSocketServerProtocolHandler 核心功能是将http协议升级为ws协议，保持长连接
                              */
-                            pipeline.addLast(new WebSocketServerProtocolHandler("/hello", null, true));
+                            pipeline.addLast(new WebSocketServerProtocolHandler("/socket", null, true));
                             // 自定义handler，处理业务逻辑
                             pipeline.addLast(new MyServerHandler());
-
                         }
                     });
             //端口设置
-            ChannelFuture channelFuture = bootstrap.bind(1234).sync();
+            ChannelFuture channelFuture = bootstrap.bind(8888).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {
             bossGroup.shutdownGracefully();

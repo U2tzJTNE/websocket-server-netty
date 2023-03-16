@@ -1,15 +1,12 @@
-package main.java.com.krt.netty.websocket;
+package com.u2tzjtne.websocket;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
-
-import java.time.LocalDateTime;
-
 /**
- * @Author gmd
+ * @Author u2tzjtne@gmail.com
  * @Description Netty WebSocket长连接处理类
- * @Date 2020/1/16 21:40
+ * @Date 2023/3/7 10:40
  */
 public class MyServerHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
 
@@ -20,7 +17,7 @@ public class MyServerHandler extends SimpleChannelInboundHandler<TextWebSocketFr
     protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) {
         System.out.println("服务器收到消息 ==> " + msg.text());
         // 返回数据  LocalDateTime.now()表示获取当前时间
-        ctx.writeAndFlush(new TextWebSocketFrame("[ " + LocalDateTime.now() + " ]server return " + msg.text()));
+        ctx.writeAndFlush(new TextWebSocketFrame(msg.text()));
     }
 
     @Override

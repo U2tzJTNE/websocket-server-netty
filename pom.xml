@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.krt</groupId>
-    <artifactId>NettyTest</artifactId>
+    <artifactId>websocket-server-netty</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -13,41 +13,8 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.43.Final</version>
+            <version>4.1.86.Final</version>
         </dependency>
-
-        <!-- protobuf -->
-        <dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
-            <version>3.6.1</version>
-        </dependency>
-
-        <!--log4j-->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
-        </dependency>
-        <!--log4j test scope-->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.25</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.25</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
